@@ -1,6 +1,15 @@
+html{
+    background: black;
+}
+
+:root{
+    --purple: rgb(84, 0, 186);
+    --black: rgb(23, 22, 22);
+}
+
 header{
     background: rgb(235, 235, 240);
-    border-bottom: 1q solid rgb(23, 22, 22);
+    border-bottom: 1q solid var(--black);
     width: 100%;
     height: 70px;
     display: inline-flex;
@@ -10,12 +19,12 @@ header{
     z-index: 99;
 }
 body{
-    background: rgb(255, 255, 255);
+    background: var(--black);
     margin: 0;
 }
 footer{
     background: rgb(235, 235, 240);
-    border-top: 1q solid rgb(23, 22, 22);
+    border-top: 1q solid var(--black);
     height: 200px;
     transition: all 1s;
     width: 100%;
@@ -26,13 +35,16 @@ footer{
 }
 ::-webkit-scrollbar-track{
     background: rgb(235, 235, 240);
-    border-left: 1q solid rgb(23, 22, 22);
+    border-left: 1q solid var(--black);
 }
 ::-webkit-scrollbar-thumb{
     background: rgb(255, 255, 255);
-    border-top: 1q solid rgb(23, 22, 22);
-    border-bottom: 1q solid rgb(23, 22, 22);
-    border-left: 1q solid rgb(23, 22, 22);
+    border-top: 1q solid var(--black);
+    border-bottom: 1q solid var(--black);
+    border-left: 1q solid var(--black);
+}
+a{
+    color: purple;
 }
 h5{
     font-weight: 100;
@@ -42,7 +54,7 @@ h5{
 }
 .ColapsdNavBar{
     background:white;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     text-align: center;
     width:150px;
     height: 200px;
@@ -165,7 +177,7 @@ h5{
         height: 100px!important;
         margin-left: auto;
         margin-right: auto;
-        border-left: 1px solid rgb(23, 22, 22);
+        border-left: 1px solid var(--black);
     }
     .footerSpace{
         height: inherit;
@@ -176,12 +188,12 @@ h5{
     }
 }
 ::selection{
-    background: rgb(23, 22, 22);
+    background: var(--black);
     color: rgb(235, 235, 240);
 }
 .Main{
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 1px solid var(--black);
+    border-right: 1px solid var(--black);
     background: rgb(244, 244, 251);
     width: 55%;
     transition: width 2s;
@@ -226,7 +238,7 @@ span[Tut]{
     cursor: pointer;
 }
 button[main]{
-    border: 1px solid black;
+    border: 1px solid var(--black);
     border-radius: 10px;
     background: rgb(235, 235, 240);
     width:300q;
@@ -258,7 +270,7 @@ button[main]{
     text-align: center;
     width: 100%;
     height: auto;
-    border-right: 1px solid rgb(23, 22, 22);
+    border-right: 1px solid var(--black);
     min-width: 300px;
     transition: all 1s;
 }
@@ -273,7 +285,7 @@ h1[footers]{
     width: 80px;
     margin-left: auto;
     margin-right: auto;
-    border-bottom: 1px solid rgb(23, 22, 22);
+    border-bottom: 1px solid var(--black);
 }
 h2[footers]{
     font-size: larger;
@@ -282,7 +294,7 @@ h2[footers]{
 }
 .footerContact{
     background: white;
-    border-left: 1px solid rgb(23, 22, 22);
+    border-left: 1px solid var(--black);
 }
 .footerConnect{
     background: white;
