@@ -121,24 +121,32 @@ h5{
     -webkit-text-fill-color: transparent;
     filter: brightness(0);
 }
+.plus{
+    width: 10px;
+}
 .box{
-    display: inline-flex;
+    display: flex;
     line-height: 3;
     transition: filter 2s;
     cursor: pointer;
+    font-size: small;
     background: linear-gradient(to right, red, black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: brightness(0);
+    margin-left: auto;
+    margin-right: auto;
+    /*border-left: 1px solid var(--black);
+    border-right: 1px solid var(--black);*/
 }
 .SidNvBrHme{
-    width: 50px;
+    width: 40px;
 }
 .SidNvBrDwn{
-    width: 110px;
+    width: 90px;
 }
 .SidNvBrTut{
-    width: 110px;
+    width: 80px;
 }
 .Box:hover{
     transition: 0s;
