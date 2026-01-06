@@ -67,7 +67,7 @@ h5{
     visibility: hidden;
     z-index: -99;
 }
-.DivElem1:hover,.DivElem2:hover,.DivElem3:hover,.DivElem4:hover{
+.DivElem1:hover,.DivElem2:hover,.DivElem3:hover,.DivElem4:hover,.DivElem5:hover{
     transition: 0s;
     background: linear-gradient(to right, red, black);
     -webkit-background-clip: text;
@@ -169,7 +169,7 @@ h5{
     .DivElem0{
         width: 65%;
     }
-    .DivElem1,.DivElem2,.DivElem3 {
+    .DivElem1,.DivElem2,.DivElem3,.DivElem5 {
         display: none;
     }
     .DivElem4{
