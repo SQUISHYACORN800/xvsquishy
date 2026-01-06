@@ -158,6 +158,9 @@ h5{
 .SidNvBrTut{
     width: 80px;
 }
+.SidNvBrTut{
+    width: 50px;
+}
 .Box:hover{
     transition: 0s;
     background: linear-gradient(to right, red, black);
@@ -280,6 +283,10 @@ button[main]{
     margin-top:-20px;
   }
 .ManTut{
+    height: 300px;
+    display: none;
+}
+.ManMus{
     height: 300px;
     display: none;
 }

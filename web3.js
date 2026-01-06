@@ -17,16 +17,25 @@ function ClkHme(){
     document.getElementById("Home").style.display = "block";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
+    document.getElementById("Music").style.display = "none";
 }
 function ClkDwn(){
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "block";
     document.getElementById("Tutorials").style.display = "none";
+    document.getElementById("Music").style.display = "none";
 }
 function ClkTut(){
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "block";
+    document.getElementById("Music").style.display = "none";
+}
+function ClkMus(){
+    document.getElementById("Home").style.display = "none";
+    document.getElementById("Downloads").style.display = "none";
+    document.getElementById("Tutorials").style.display = "none";
+    document.getElementById("Music").style.display = "block";
 }
 window.addEventListener("wheel", e => {
     const scrollDirection = e.deltaY < 0 ? 1 : 0
