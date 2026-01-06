@@ -181,6 +181,9 @@ h5{
     #NavBox{
         visibility: visible;
     }
+    iframe{
+        width: 500px;
+    }
 }
 @media only screen and (max-width:1100px) {
     .Main{
