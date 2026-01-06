@@ -287,7 +287,8 @@ button[main]{
     display: none;
 }
 .ManMus{
-    height: 300px;
+    padding-top: 1in;
+    padding-bottom: 1in;
     display: none;
 }
 
