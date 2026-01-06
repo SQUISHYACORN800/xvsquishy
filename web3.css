@@ -124,7 +124,6 @@ h5{
 .DivElem5{
     width: 110px;
     margin: auto;
-    display: none;
     transition: all 2s;
     cursor: pointer;
     background: linear-gradient(to right, red, black);
