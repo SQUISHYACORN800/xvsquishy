@@ -49,8 +49,10 @@ window.addEventListener("wheel", e => {
 function btn_clk_1(){
     if (document.documentElement.style.filter == "invert(1)"){
         document.documentElement.style.filter = "invert(0)";
+        document.body.style.background = "--black";
     }else{
         document.documentElement.style.filter = "invert(1)";
+        document.body.style.background = "white";
     }
 }
 
