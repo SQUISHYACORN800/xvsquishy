@@ -53,3 +53,8 @@ function btn_clk_1(){
         document.documentElement.style.filter = "invert(1)";
     }
 }
+
+var hue = 0;
+setInterval( () => {
+  document.getElementById('Headr').style.filter = 'hue-rotate('+ hue++ +'deg)'
+}, 50)
