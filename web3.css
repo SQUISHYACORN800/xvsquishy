@@ -6,9 +6,6 @@ html{
     --purple: rgb(84, 0, 186);
     --black: rgb(23, 22, 22);
 }
-#Headr{
-    transition: all 1s;
-}
 
 header{
     background: rgb(235, 235, 240);
@@ -76,7 +73,7 @@ h5{
     background: linear-gradient(to right, red, black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: brightness(1), hue-rotate(0);
+    filter: brightness(1);
 }
 .DivElem0{
     width: 115px;
