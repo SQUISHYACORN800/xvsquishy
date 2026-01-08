@@ -213,8 +213,8 @@ h5{
     }
 }
 ::selection{
-    filter: hue-rotate(20deg);
-    mix-blend-mode: difference;
+    background-color: black;
+    color: white;
 }
 iframe{
     transition: all 2s;
