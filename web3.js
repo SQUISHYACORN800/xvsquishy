@@ -2,7 +2,7 @@ setInterval(AlwaysActive, 100);
 
 //  VARIABLES
 
-const iframes = document.querySelectorAll("iframe");
+//const iframes = document.querySelectorAll("iframe");
 
 //  VARIABLES
 
@@ -54,8 +54,13 @@ window.addEventListener("wheel", e => {
 function btn_clk_1(){
     if (document.documentElement.style.filter == "invert(1)"){
         document.documentElement.style.filter = "invert(0)";
+        const iframes = document.querySelectorAll("iframe");
+        iframes.forEach(iframe => {
+            iframe.style.filter = "invert(0)";
+        });
     }else{
         document.documentElement.style.filter = "invert(1)";
+        const iframes = document.querySelectorAll("iframe");
         iframes.forEach(iframe => {
             iframe.style.filter = "invert(1)";
         });
