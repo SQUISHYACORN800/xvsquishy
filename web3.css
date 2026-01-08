@@ -213,8 +213,7 @@ h5{
     }
 }
 ::selection{
-    background: var(--black);
-    color: rgb(235, 235, 240);
+    filter: hue-rotate(20deg);
     mix-blend-mode: difference;
 }
 iframe{
