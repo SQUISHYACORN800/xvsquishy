@@ -1,5 +1,10 @@
 setInterval(AlwaysActive, 100);
 
+//  VARIABLES
+
+const iframes = document.querySelectorAll("iframe");
+
+//  VARIABLES
 
 function TogleNavBox(){
     
@@ -51,7 +56,9 @@ function btn_clk_1(){
         document.documentElement.style.filter = "invert(0)";
     }else{
         document.documentElement.style.filter = "invert(1)";
-        document.querySelector("iframe").style.filter = "invert(0)";
+        iframes.forEach(iframe => {
+            iframe.style.filter = "invert(1)";
+        });
     }
 }
 
