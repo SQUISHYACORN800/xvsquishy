@@ -71,3 +71,9 @@ var hue = 0;
 setInterval( () => {
   document.getElementById('Headr').style.filter = 'hue-rotate('+ hue++ +'deg)'
 }, 50)
+
+
+var $circle = $('.circle');
+function moveCircle(e){
+  TweenLite.to($circle,0.2,{css:{left:e.pageX, top:e.pageY}});
+}$(window).on('mousemove', moveCircle);
