@@ -213,8 +213,8 @@ h5{
     }
 }
 ::selection{
-    /*background: var(--black);
-    color: rgb(235, 235, 240);*/
+    background: var(--black);
+    color: rgb(235, 235, 240);
     mix-blend-mode: difference;
 }
 iframe{
