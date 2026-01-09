@@ -1,4 +1,4 @@
-setInterval(AlwaysActive, 10);
+setInterval(AlwaysActive, 100);
 
 //  VARIABLES
 
