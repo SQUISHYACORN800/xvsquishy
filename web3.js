@@ -1,4 +1,4 @@
-setInterval(AlwaysActive, 100);
+setInterval(AlwaysActive, 10);
 
 //  VARIABLES
 
@@ -16,7 +16,10 @@ function TogleNavBox(){
     
 }
 function AlwaysActive(){
-    
+    var $circle = $('.circle');
+function moveCircle(e){
+  TweenLite.to($circle,0.2,{css:{left:e.pageX, top:e.pageY}});
+}$(window).on('mousemove', moveCircle);
 }
 function ClkHme(){
     document.getElementById("Home").style.display = "block";
@@ -73,7 +76,7 @@ setInterval( () => {
 }, 50)
 
 
-var $circle = $('.circle');
-function moveCircle(e){
-  TweenLite.to($circle,0.2,{css:{left:e.pageX, top:e.pageY}});
-}$(window).on('mousemove', moveCircle);
+//var $circle = $('.circle');
+//function moveCircle(e){
+//  TweenLite.to($circle,0.2,{css:{left:e.pageX, top:e.pageY}});
+//}$(window).on('mousemove', moveCircle);
