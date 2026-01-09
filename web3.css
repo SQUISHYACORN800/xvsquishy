@@ -222,6 +222,7 @@ iframe{
 #elemtext{
   z-index: 50;
   mix-blend-mode: difference;
+  pointer-events: none;
 }
 .circle{
   position:absolute;
