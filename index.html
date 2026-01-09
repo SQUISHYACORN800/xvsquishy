@@ -62,6 +62,7 @@
         </div>
 
         <div class="circle" id="elemtext"></div>
+        <script>var $circle = $('.circle');function moveCircle(e){TweenLite.to($circle,0.2,{css:{left:e.pageX, top:e.pageY}});}$(window).on('mousemove', moveCircle);</script>
 
     </body>
     <footer>

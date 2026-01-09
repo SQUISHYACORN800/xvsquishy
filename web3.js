@@ -8,11 +8,6 @@ setInterval(AlwaysActive, 100);
 
 function TogleNavBox(){
     
-    if (document.getElementById("NavBox").style.display == "block"){
-        document.getElementById("NavBox").style.display = "none";
-    }else{
-        document.getElementById("NavBox").style.display = "block";
-    }
     
 }
 function AlwaysActive(){
@@ -76,7 +71,3 @@ setInterval( () => {
 }, 50)
 
 
-//var $circle = $('.circle');
-//function moveCircle(e){
-//  TweenLite.to($circle,0.2,{css:{left:e.pageX, top:e.pageY}});
-//}$(window).on('mousemove', moveCircle);
