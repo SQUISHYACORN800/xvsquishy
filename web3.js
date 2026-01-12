@@ -66,7 +66,7 @@ function btn_clk_1(){
     }
 }
 
-var hue = 0;
-setInterval( () => {
-  document.getElementById('Headr').style.filter = 'hue-rotate('+ hue++ +'deg)'
-}, 50)
+var hue=0;
+setInterval(()=>{
+  document.getElementById('Headr').style.filter = 'hue-rotate('+hue+++'deg)'
+},50)
