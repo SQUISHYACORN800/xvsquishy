@@ -263,6 +263,26 @@ iframe{
     font-family: Raleway, Itim;
     font-weight: 300;
 }
+hr{
+    width:30%;
+    background:darkslategray;
+    height:1px;
+    border:none;
+}
+.bio{
+    font-family: Ysabeau SC;
+    margin-left:1in;
+    margin-right:1in;
+    transition:all 0.25s;
+    padding-bottom:4px;
+    cursor:default;
+}
+.bio:hover{
+    color:slategray;
+}
+.spacer-small{
+    height:3in;
+}
 .ManDwn{
     height: 900px;
     display: none;
