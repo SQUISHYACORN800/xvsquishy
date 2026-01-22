@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Itim&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         
-        <header id="Headr">
+        <header id="Headr" class="prevent-select">
             <div class="DivElem0"><h5>X V - S Q U I S H Y</h5></div>
             <div class="DivElem1" onclick="ClkHme();"><h5>H O M E</h5></div>
             <div class="DivElem2" onclick="ClkDwn();"><h5>D O W N L O A D S</h5></div>
@@ -31,9 +31,9 @@
     </head>
     <body>
         <div id="Home" class="ManHme Main">
-            <h1 class="Ttl">Welcome</h1>
+            <h1 class="Ttl prevent-select">Welcome</h1>
             <h2 class="SubTtl">This site will be updated as soon as new downloads and tutorials come out, please browse on.</h2>
-            <div class="spacer-small"></div><h2 class="SubTtl">ABOUT ME</h2>
+            <div class="spacer-small"></div><h2 class="SubTtl prevent-select">ABOUT ME</h2>
             <hr>
                 <div class="bio">I am deep thinker with a passion for technology and creative arts, expressed through my software development and music. I can work to a very high standard and enjoy pushing the boundaries of what is possible, especially in my coding.
 I am not afraid to experiment and try new ways of working to achieve success, taking on new ideas from others and challenging frameworks.
@@ -43,7 +43,7 @@ Through my professional training and augmented with self-taught skills.
         </div>
         <div id="Downloads" class="ManDwn Main">
             <h2 class="TitleH2">This file extension ".yyz" needs <a href="https://gamemaker.io/en" target="_blank">gamemaker</a> to run, see <span Tut onclick="ClkTut();">tutorials</span> for import instructions.</h2>
-            <a href="Downloads/The%20Domain.yyz" download><button main>
+            <a class="prevent-select" href="Downloads/The%20Domain.yyz" download><button main>
                 <h1 btn>Download</h1>
                 <h2 btn>The Domain.yyz</h2>
             </button></a>
@@ -52,28 +52,21 @@ Through my professional training and augmented with self-taught skills.
 
         </div>
         <div id="Music" class="ManMus Main">
-            <iframe width="560" height="202" src="https://www.bandlab.com/embed/?id=8d86b697-30d4-f011-819b-6045bd3096b1"></iframe>
-            </br></br></br></br>
-            <iframe width="560" height="202" src="https://www.bandlab.com/embed/?id=60ca585c-dbd2-f011-819b-6045bd3096b1"></iframe>
-            </br></br></br></br>
-            <iframe width="560" height="202" src="https://www.bandlab.com/embed/?id=ada4f5c1-968c-f011-b480-6045bd35f0e2"></iframe>
-            </br></br></br></br>
-            <iframe width="560" height="202" src="https://www.bandlab.com/embed/?id=9e3d756c-fe3a-f011-a5f1-6045bd2f3017"></iframe>
-            </br></br></br></br>
-            </br></br></br></br>
-            </br></br></br></br>
-            </br></br></br></br>
-            </br></br></br></br>
-            </br></br></br></br>
-            </br></br></br></br>
-            </br></br></br></br>
+            <iframe class="prevent-select" width="560" height="202" src="https://www.bandlab.com/embed/?id=8d86b697-30d4-f011-819b-6045bd3096b1"></iframe>
+            <div class="spacer-smaller"></div>
+            <iframe class="prevent-select" width="560" height="202" src="https://www.bandlab.com/embed/?id=60ca585c-dbd2-f011-819b-6045bd3096b1"></iframe>
+            <div class="spacer-smaller"></div>
+            <iframe class="prevent-select" width="560" height="202" src="https://www.bandlab.com/embed/?id=ada4f5c1-968c-f011-b480-6045bd35f0e2"></iframe>
+            <div class="spacer-smaller"></div>
+            <iframe class="prevent-select" width="560" height="202" src="https://www.bandlab.com/embed/?id=9e3d756c-fe3a-f011-a5f1-6045bd2f3017"></iframe>
+            <div class="spacer-smaller"></div>
         </div>
 
         <div class="circle" id="elemtext"></div>
         <script>var $circle = $('.circle');function moveCircle(e){TweenLite.to($circle,0.2,{css:{left:e.pageX, top:e.pageY}});}$(window).on('mousemove', moveCircle);</script>
 
     </body>
-    <footer>
+    <footer class="prevent-select">
         <div class="footerSpace"></div>
         <div class="footerContact footers">
             <h1 footers>Contact</h1>

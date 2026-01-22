@@ -269,6 +269,11 @@ hr{
     height:1px;
     border:none;
 }
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
 .bio{
     font-family: Ysabeau SC;
     margin-left:1in;
@@ -282,6 +287,9 @@ hr{
 }
 .spacer-small{
     height:3in;
+}
+.spacer-smaller{
+    height:0.5in;
 }
 .ManDwn{
     height: 900px;
