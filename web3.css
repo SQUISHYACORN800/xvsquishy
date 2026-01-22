@@ -45,8 +45,20 @@ footer{
     border-bottom: 1q solid var(--black);
     border-left: 1q solid var(--black);
 }
+img{
+    border-radius:50%;
+    width:150px;
+    height:150px;
+    border:1px solid black;
+}
 a{
     color: purple;
+}
+a:active{
+    color:lightgreen !important;
+}
+.DLM:active{
+    color:lightgreen !important;
 }
 h5{
     font-weight: 100;
