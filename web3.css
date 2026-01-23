@@ -207,12 +207,12 @@ h5{
 @media only screen and (max-width:940px) {
     footer{
         display: block;
-        height: 370px;
+        height: 470px;
         padding-top: 20px;
     }
     .footers{
         width: 400px!important;
-        height: 100px!important;
+        height: 120px!important;
         margin-left: auto;
         margin-right: auto;
         border-left: 1px solid var(--black);
