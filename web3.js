@@ -15,7 +15,7 @@ function TogleNavBox(){
     }
     
 }
-const chat = fetch('/chat.txt')
+const chat = fetch('./chat.txt')
   .then(response => {
     return response.text();
   })
