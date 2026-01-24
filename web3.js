@@ -15,6 +15,13 @@ function TogleNavBox(){
     }
     
 }
+const chat = fetch('/chat.txt')
+  .then(response => {
+    return response.text();
+  })
+  .then(data => {
+    document.getElementById("a").innerHTML = data;
+  })
 function AlwaysActive(){
 }
 function ClkHme(){
