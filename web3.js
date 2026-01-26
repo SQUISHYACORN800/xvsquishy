@@ -26,13 +26,7 @@ const chat = fetch('./chat.txt')
 
 //end binary
 function AlwaysActive(){
-    var originalData = document.getElementById("a").innerHTML;
-    const decodedResult = originalData
-    .split(' ')
-    .map(bin => String.fromCharCode(parseInt(bin, 2)))
-    .join('');
-
-    document.getElementById("a").innerHTML = decodedResult;
+    
 }
 function ClkHme(){
     document.getElementById("Home").style.display = "block";
@@ -89,3 +83,11 @@ var hue=0;
 setInterval(()=>{
   document.getElementById('Headr').style.filter = 'hue-rotate('+hue+++'deg)'
 },50)
+
+    var originalData = document.getElementById("a").innerHTML;
+    const decodedResult = originalData
+    .split(' ')
+    .map(bin => String.fromCharCode(parseInt(bin, 2)))
+    .join('');
+
+    document.getElementById("a").innerHTML = decodedResult;
