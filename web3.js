@@ -15,7 +15,6 @@ function TogleNavBox(){
     }
     
 }
-//binary
 const chat = fetch('./chat.txt')
   .then(response => {
     return response.text();
@@ -24,7 +23,6 @@ const chat = fetch('./chat.txt')
     document.getElementById("a").innerHTML = data;
   })
 
-//end binary
 function AlwaysActive(){
     
 }
@@ -83,7 +81,11 @@ var hue=0;
 setInterval(()=>{
   document.getElementById('Headr').style.filter = 'hue-rotate('+hue+++'deg)'
 },50)
+ 
+document.getElementById("a").addEventListener("mouseover", revealB());
+document.getElementById("a").addEventListener("mouseleave", unrevealB());
 
+function revealB(){
     var originalData = document.getElementById("a").innerHTML;
     const decodedResult = originalData
     .split(' ')
@@ -91,3 +93,13 @@ setInterval(()=>{
     .join('');
 
     document.getElementById("a").innerHTML = decodedResult;
+}
+function unrevealB(){
+    var originalData = document.getElementById("a").innerHTML;
+    const binaryResult = originalData
+    .split('')
+    .map(char => char.charCodeAt(0).toString(2).padStart(8, '0'))
+    .join(' ');
+
+    document.getElementById("a").innerHTML = binaryResult;
+}
