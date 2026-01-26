@@ -82,8 +82,8 @@ setInterval(()=>{
   document.getElementById('Headr').style.filter = 'hue-rotate('+hue+++'deg)'
 },50)
  
-document.getElementById("a").addEventListener("mouseover", revealB());
-document.getElementById("a").addEventListener("mouseleave", unrevealB());
+document.getElementById("a").onmouseover = function() {revealB()};
+document.getElementById("a").onmouseout = function() {unrevealB()};
 
 function revealB(){
     var originalData = document.getElementById("a").innerHTML;
