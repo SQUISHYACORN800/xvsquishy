@@ -23,15 +23,16 @@ const chat = fetch('./chat.txt')
   .then(data => {
     document.getElementById("a").innerHTML = data;
   })
-  var originalData = document.getElementById("a").innerHTML;
-  const decodedResult = originalData
+
+//end binary
+function AlwaysActive(){
+    var originalData = document.getElementById("a").innerHTML;
+    const decodedResult = originalData
     .split(' ')
     .map(bin => String.fromCharCode(parseInt(bin, 2)))
     .join('');
 
-  document.getElementById("a").innerHTML = decodedResult;
-//end binary
-function AlwaysActive(){
+    document.getElementById("a").innerHTML = decodedResult;
 }
 function ClkHme(){
     document.getElementById("Home").style.display = "block";
