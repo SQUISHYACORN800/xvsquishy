@@ -15,6 +15,7 @@ function TogleNavBox(){
     }
     
 }
+//binary
 const chat = fetch('./chat.txt')
   .then(response => {
     return response.text();
@@ -22,6 +23,14 @@ const chat = fetch('./chat.txt')
   .then(data => {
     document.getElementById("a").innerHTML = data;
   })
+  var originalData = document.getElementById("a").innerHTML;
+  const decodedResult = originalData
+    .split(' ')
+    .map(bin => String.fromCharCode(parseInt(bin, 2)))
+    .join('');
+
+  document.getElementById("a").innerHTML = decodedResult;
+//end binary
 function AlwaysActive(){
 }
 function ClkHme(){
