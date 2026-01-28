@@ -15,14 +15,6 @@ function TogleNavBox(){
     }
     
 }
-const chat = fetch('./chat.txt')
-  .then(response => {
-    return response.text();
-  })
-  .then(data => {
-    document.getElementById("a").innerHTML = data;
-  })
-
 function AlwaysActive(){
     
 }
@@ -82,21 +74,22 @@ setInterval(()=>{
   document.getElementById('Headr').style.filter = 'hue-rotate('+hue+++'deg)'
 },50)
 
-function revealB(){
-    var originalData = document.getElementById("a").innerHTML;
-    const decodedResult = originalData
-    .split(' ')
-    .map(bin => String.fromCharCode(parseInt(bin, 2)))
-    .join('');
-
-    document.getElementById("a").innerHTML = decodedResult;
+function smoothScrollBy(distance, duration) {
+  const startY = window.scrollY;
+  const startTime = performance.now();
+  function scrollStep(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = progress < 0.5 
+      ? 4 * progress * progress * progress 
+      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    window.scrollTo(0, startY + (distance * easedProgress));
+    if (progress < 1) {
+      requestAnimationFrame(scrollStep);
+    }
+  }
+  requestAnimationFrame(scrollStep);
 }
-function unrevealB(){
-    var originalData = document.getElementById("a").innerHTML;
-    const binaryResult = originalData
-    .split('')
-    .map(char => char.charCodeAt(0).toString(2).padStart(8, '0'))
-    .join(' ');
-
-    document.getElementById("a").innerHTML = binaryResult;
-}
+function scrolltobio(){
+  smoothScrollBy(1000, 2000); // 100px distance, 2000ms duration
+};
