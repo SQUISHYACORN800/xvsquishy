@@ -60,6 +60,12 @@ a:active{
 .DLM:active{
     color:lightgreen !important;
 }
+.underline{
+    text-decoration: underline;
+}
+.curpoint{
+    cursor: pointer;
+}
 h5{
     font-weight: 100;
     text-align: center;
@@ -298,7 +304,7 @@ hr{
     color:slategray;
 }
 .spacer-small{
-    height:6in;
+    height:9in;
 }
 .spacer-smaller{
     height:0.5in;
