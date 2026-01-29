@@ -19,28 +19,36 @@ function AlwaysActive(){
     
 }
 function ClkHme(){
+    closegate();
     document.getElementById("Home").style.display = "block";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
+    opengate();
 }
 function ClkDwn(){
+    closegate();
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "block";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
+    opengate();
 }
 function ClkTut(){
+    closegate();
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "block";
     document.getElementById("Music").style.display = "none";
+    opengate();
 }
 function ClkMus(){
+    closegate();
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "block";
+    opengate();
 }
 window.addEventListener("wheel", e => {
     const scrollDirection = e.deltaY < 0 ? 1 : 0
@@ -69,8 +77,15 @@ function btn_clk_1(){
     }
 }
 function onloaded(){
+    opengate();
+}
+function opengate(){
     document.getElementById("lo").style.width = "0";
     document.getElementById("ro").style.width = "0";
+}
+function closegate(){
+    document.getElementById("lo").style.width = "50%";
+    document.getElementById("ro").style.width = "50%";
 }
 
 
