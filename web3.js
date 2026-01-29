@@ -19,6 +19,7 @@ function AlwaysActive(){
     
 }
 function ClkHme(){
+    clearInterval(activatetime);
     closegate();
     document.getElementById("Home").style.display = "block";
     document.getElementById("Downloads").style.display = "none";
@@ -27,6 +28,7 @@ function ClkHme(){
     var activatetime = setInterval(opengate ,3000);
 }
 function ClkDwn(){
+    clearInterval(activatetime);
     closegate();
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "block";
@@ -35,6 +37,7 @@ function ClkDwn(){
     var activatetime = setInterval(opengate ,3000);
 }
 function ClkTut(){
+    clearInterval(activatetime);
     closegate();
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
@@ -43,6 +46,7 @@ function ClkTut(){
     var activatetime = setInterval(opengate ,3000);
 }
 function ClkMus(){
+    clearInterval(activatetime);
     closegate();
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
