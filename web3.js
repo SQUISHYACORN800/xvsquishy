@@ -1,5 +1,9 @@
 setInterval(AlwaysActive, 10);
 var activatetime = setInterval(opengate ,null);
+var activatetimeH = setInterval(opengateH ,null);
+var activatetimeD = setInterval(opengateD ,null);
+var activatetimeT = setInterval(opengateT ,null);
+var activatetimeM = setInterval(opengateM ,null);
 //  VARIABLES
 
 //const iframes = document.querySelectorAll("iframe");
@@ -20,39 +24,63 @@ function AlwaysActive(){
 }
 function ClkHme(){
     clearInterval(activatetime);
+    clearInterval(activatetimeH);
+    clearInterval(activatetimeD);
+    clearInterval(activatetimeT);
+    clearInterval(activatetimeM);
     closegate();
+    activatetimeH = setInterval(opengateH ,3000);
+}
+function ClkHmeB{
     document.getElementById("Home").style.display = "block";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
-    activatetime = setInterval(opengate ,3000);
 }
 function ClkDwn(){
     clearInterval(activatetime);
+    clearInterval(activatetimeH);
+    clearInterval(activatetimeD);
+    clearInterval(activatetimeT);
+    clearInterval(activatetimeM);
     closegate();
+    activatetimeD = setInterval(opengateD ,3000);
+}
+function ClkDwnB{
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "block";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
-    activatetime = setInterval(opengate ,3000);
 }
 function ClkTut(){
     clearInterval(activatetime);
+    clearInterval(activatetimeH);
+    clearInterval(activatetimeD);
+    clearInterval(activatetimeT);
+    clearInterval(activatetimeM);
     closegate();
+    activatetimeT = setInterval(opengateT ,3000);
+}
+function ClkTutB{
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "block";
     document.getElementById("Music").style.display = "none";
-    activatetime = setInterval(opengate ,3000);
 }
 function ClkMus(){
     clearInterval(activatetime);
+    clearInterval(activatetimeH);
+    clearInterval(activatetimeD);
+    clearInterval(activatetimeT);
+    clearInterval(activatetimeM);
     closegate();
+    activatetimeM = setInterval(opengateM ,3000);
+}
+function ClkMusB{
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "block";
-    activatetime = setInterval(opengate ,3000);
 }
 window.addEventListener("wheel", e => {
     const scrollDirection = e.deltaY < 0 ? 1 : 0
@@ -86,6 +114,30 @@ function onloaded(){
 function opengate(){
     document.getElementById("lo").style.width = "0";
     document.getElementById("ro").style.width = "0";
+    clearInterval(activatetime);
+}
+function opengateH(){
+    document.getElementById("lo").style.width = "0";
+    document.getElementById("ro").style.width = "0";
+    ClkHmeB();
+    clearInterval(activatetime);
+}
+function opengateD(){
+    document.getElementById("lo").style.width = "0";
+    document.getElementById("ro").style.width = "0";
+    ClkDwnB();
+    clearInterval(activatetime);
+}
+function opengateT(){
+    document.getElementById("lo").style.width = "0";
+    document.getElementById("ro").style.width = "0";
+    ClkTutB();
+    clearInterval(activatetime);
+}
+function opengateM(){
+    document.getElementById("lo").style.width = "0";
+    document.getElementById("ro").style.width = "0";
+    ClkMusB();
     clearInterval(activatetime);
 }
 function closegate(){
