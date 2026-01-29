@@ -1,5 +1,5 @@
 setInterval(AlwaysActive, 10);
-
+var activatetime = setInterval(opengate ,null);
 //  VARIABLES
 
 //const iframes = document.querySelectorAll("iframe");
@@ -25,7 +25,7 @@ function ClkHme(){
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
-    var activatetime = setInterval(opengate ,3000);
+    activatetime = setInterval(opengate ,3000);
 }
 function ClkDwn(){
     clearInterval(activatetime);
@@ -34,7 +34,7 @@ function ClkDwn(){
     document.getElementById("Downloads").style.display = "block";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
-    var activatetime = setInterval(opengate ,3000);
+    activatetime = setInterval(opengate ,3000);
 }
 function ClkTut(){
     clearInterval(activatetime);
@@ -43,7 +43,7 @@ function ClkTut(){
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "block";
     document.getElementById("Music").style.display = "none";
-    var activatetime = setInterval(opengate ,3000);
+    activatetime = setInterval(opengate ,3000);
 }
 function ClkMus(){
     clearInterval(activatetime);
@@ -52,7 +52,7 @@ function ClkMus(){
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "block";
-    var activatetime = setInterval(opengate ,3000);
+    activatetime = setInterval(opengate ,3000);
 }
 window.addEventListener("wheel", e => {
     const scrollDirection = e.deltaY < 0 ? 1 : 0
