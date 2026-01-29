@@ -115,24 +115,40 @@ function opengate(){
     document.getElementById("lo").style.width = "0";
     document.getElementById("ro").style.width = "0";
     clearInterval(activatetime);
+    clearInterval(activatetimeH);
+    clearInterval(activatetimeD);
+    clearInterval(activatetimeT);
+    clearInterval(activatetimeM);
 }
 function opengateH(){
     document.getElementById("lo").style.width = "0";
     document.getElementById("ro").style.width = "0";
     ClkHmeB();
     clearInterval(activatetime);
+    clearInterval(activatetimeH);
+    clearInterval(activatetimeD);
+    clearInterval(activatetimeT);
+    clearInterval(activatetimeM);
 }
 function opengateD(){
     document.getElementById("lo").style.width = "0";
     document.getElementById("ro").style.width = "0";
     ClkDwnB();
     clearInterval(activatetime);
+    clearInterval(activatetimeH);
+    clearInterval(activatetimeD);
+    clearInterval(activatetimeT);
+    clearInterval(activatetimeM);
 }
 function opengateT(){
     document.getElementById("lo").style.width = "0";
     document.getElementById("ro").style.width = "0";
     ClkTutB();
     clearInterval(activatetime);
+    clearInterval(activatetimeH);
+    clearInterval(activatetimeD);
+    clearInterval(activatetimeT);
+    clearInterval(activatetimeM);
 }
 function opengateM(){
     document.getElementById("lo").style.width = "0";
