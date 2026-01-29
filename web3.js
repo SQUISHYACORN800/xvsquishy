@@ -69,6 +69,9 @@ function btn_clk_1(){
     }
 }
 
+document.getElementById("lo").style.width = "0";
+document.getElementById("ro").style.width = "0";
+
 var hue=0;
 setInterval(()=>{
   document.getElementById('Headr').style.filter = 'hue-rotate('+hue+++'deg)'

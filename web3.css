@@ -32,6 +32,21 @@ footer{
     width: 100%;
     display: flex;
 }
+.leftone{
+  background:var(--black);
+  height:100%;
+  position:fixed;
+  width:50%;
+  transition:all 2s;
+}
+.rightone{
+  background:var(--black);
+  height:100%;
+  position:fixed;
+  width:50%;
+  transition:all 2s;
+  right:0;
+}
 ::-webkit-scrollbar{
     width: 20px;
 }
