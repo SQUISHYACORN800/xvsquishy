@@ -68,9 +68,11 @@ function btn_clk_1(){
         });
     }
 }
+function onloaded(){
+    document.getElementById("lo").style.width = "0";
+    document.getElementById("ro").style.width = "0";
+}
 
-document.getElementById("lo").style.width = "0";
-document.getElementById("ro").style.width = "0";
 
 var hue=0;
 setInterval(()=>{
