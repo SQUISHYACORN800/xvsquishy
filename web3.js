@@ -25,7 +25,6 @@ function ClkHme(){
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
     var activatetime = setInterval(opengate ,3000);
-    clearInterval(activatetime);
 }
 function ClkDwn(){
     closegate();
@@ -34,7 +33,6 @@ function ClkDwn(){
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
     var activatetime = setInterval(opengate ,3000);
-    clearInterval(activatetime);
 }
 function ClkTut(){
     closegate();
@@ -43,7 +41,6 @@ function ClkTut(){
     document.getElementById("Tutorials").style.display = "block";
     document.getElementById("Music").style.display = "none";
     var activatetime = setInterval(opengate ,3000);
-    clearInterval(activatetime);
 }
 function ClkMus(){
     closegate();
@@ -52,7 +49,6 @@ function ClkMus(){
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "block";
     var activatetime = setInterval(opengate ,3000);
-    clearInterval(activatetime);
 }
 window.addEventListener("wheel", e => {
     const scrollDirection = e.deltaY < 0 ? 1 : 0
@@ -86,6 +82,7 @@ function onloaded(){
 function opengate(){
     document.getElementById("lo").style.width = "0";
     document.getElementById("ro").style.width = "0";
+    clearInterval(activatetime);
 }
 function closegate(){
     document.getElementById("lo").style.width = "50%";
