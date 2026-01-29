@@ -31,7 +31,7 @@ function ClkHme(){
     closegate();
     activatetimeH = setInterval(opengateH ,3000);
 }
-function ClkHmeB{
+function ClkHmeB(){
     document.getElementById("Home").style.display = "block";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
@@ -46,7 +46,7 @@ function ClkDwn(){
     closegate();
     activatetimeD = setInterval(opengateD ,3000);
 }
-function ClkDwnB{
+function ClkDwnB(){
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "block";
     document.getElementById("Tutorials").style.display = "none";
@@ -61,7 +61,7 @@ function ClkTut(){
     closegate();
     activatetimeT = setInterval(opengateT ,3000);
 }
-function ClkTutB{
+function ClkTutB(){
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "block";
@@ -76,7 +76,7 @@ function ClkMus(){
     closegate();
     activatetimeM = setInterval(opengateM ,3000);
 }
-function ClkMusB{
+function ClkMusB(){
     document.getElementById("Home").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
