@@ -38,7 +38,7 @@ footer{
   position:fixed;
   width:50%;
   transition:width 2s !important;
-  left:0;
+  left:-6px;
   border-right: double 6px whitesmoke;
   z-index: 9999999;
 }
@@ -48,7 +48,7 @@ footer{
   position:fixed;
   width:50%;
   transition:width 2s !important;
-  right:0;
+  right:-6px;
   border-left: double 6px whitesmoke;
   z-index: 9999999;
 }
