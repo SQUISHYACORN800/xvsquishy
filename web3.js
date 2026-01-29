@@ -24,7 +24,8 @@ function ClkHme(){
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
-    opengate();
+    var activatetime = setInterval(opengate ,3000);
+    clearInterval(activatetime);
 }
 function ClkDwn(){
     closegate();
@@ -32,7 +33,8 @@ function ClkDwn(){
     document.getElementById("Downloads").style.display = "block";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "none";
-    opengate();
+    var activatetime = setInterval(opengate ,3000);
+    clearInterval(activatetime);
 }
 function ClkTut(){
     closegate();
@@ -40,7 +42,8 @@ function ClkTut(){
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "block";
     document.getElementById("Music").style.display = "none";
-    opengate();
+    var activatetime = setInterval(opengate ,3000);
+    clearInterval(activatetime);
 }
 function ClkMus(){
     closegate();
@@ -48,7 +51,8 @@ function ClkMus(){
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Tutorials").style.display = "none";
     document.getElementById("Music").style.display = "block";
-    opengate();
+    var activatetime = setInterval(opengate ,3000);
+    clearInterval(activatetime);
 }
 window.addEventListener("wheel", e => {
     const scrollDirection = e.deltaY < 0 ? 1 : 0
