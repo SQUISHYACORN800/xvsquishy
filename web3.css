@@ -37,14 +37,15 @@ footer{
   height:100%;
   position:fixed;
   width:50%;
-  transition:width 2s;
+  transition:width 2s !important;
+  left:0;
 }
 .rightone{
   background:var(--black);
   height:100%;
   position:fixed;
   width:50%;
-  transition:width 2s;
+  transition:width 2s !important;
   right:0;
 }
 ::-webkit-scrollbar{
