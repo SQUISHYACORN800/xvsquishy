@@ -39,6 +39,7 @@ footer{
   width:50%;
   transition:width 2s !important;
   left:0;
+  border-right: double 6px whitesmoke;
 }
 .rightone{
   background:var(--black);
@@ -47,6 +48,7 @@ footer{
   width:50%;
   transition:width 2s !important;
   right:0;
+  border-left: double 6px whitesmoke;
 }
 ::-webkit-scrollbar{
     width: 20px;
