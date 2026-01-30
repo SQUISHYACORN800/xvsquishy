@@ -29,7 +29,7 @@ function ClkHme(){
     clearInterval(activatetimeT);
     clearInterval(activatetimeM);
     closegate();
-    activatetimeH = setInterval(opengateH ,1100);
+    activatetimeH = setInterval(opengateH ,1500);
 }
 function ClkHmeB(){
     document.getElementById("Home").style.display = "block";
@@ -44,7 +44,7 @@ function ClkDwn(){
     clearInterval(activatetimeT);
     clearInterval(activatetimeM);
     closegate();
-    activatetimeD = setInterval(opengateD ,1100);
+    activatetimeD = setInterval(opengateD ,1500);
 }
 function ClkDwnB(){
     document.getElementById("Home").style.display = "none";
@@ -59,7 +59,7 @@ function ClkTut(){
     clearInterval(activatetimeT);
     clearInterval(activatetimeM);
     closegate();
-    activatetimeT = setInterval(opengateT ,1100);
+    activatetimeT = setInterval(opengateT ,1500);
 }
 function ClkTutB(){
     document.getElementById("Home").style.display = "none";
@@ -74,7 +74,7 @@ function ClkMus(){
     clearInterval(activatetimeT);
     clearInterval(activatetimeM);
     closegate();
-    activatetimeM = setInterval(opengateM ,1100);
+    activatetimeM = setInterval(opengateM ,1500);
 }
 function ClkMusB(){
     document.getElementById("Home").style.display = "none";
