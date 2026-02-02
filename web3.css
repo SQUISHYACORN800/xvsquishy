@@ -68,6 +68,7 @@ footer{
 img{
     border-radius:50%;
     width:150px;
+    object-fit: cover;
     height:150px;
     border:1px solid black;
 }
