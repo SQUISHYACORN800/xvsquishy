@@ -112,8 +112,16 @@ function onloaded(){
     opengate();
 }
 function opengate(){
-    document.getElementById("lo").style.width = "0";
-    document.getElementById("ro").style.width = "0";
+    const lo = document.getElementById("lo");
+    const ro = document.getElementById("ro");
+    const dlo = document.getElementById("dlo");
+    const dro = document.getElementById("dro");
+    dlo.style.width = "0";
+    dro.style.width = "0";
+    lo.style.overflow = "hidden";
+    ro.style.overflow = "hidden";
+    lo.style.width = "0";
+    ro.style.width = "0";
     clearInterval(activatetime);
     clearInterval(activatetimeH);
     clearInterval(activatetimeD);
@@ -121,8 +129,16 @@ function opengate(){
     clearInterval(activatetimeM);
 }
 function opengateH(){
-    document.getElementById("lo").style.width = "0";
-    document.getElementById("ro").style.width = "0";
+    const lo = document.getElementById("lo");
+    const ro = document.getElementById("ro");
+    const dlo = document.getElementById("dlo");
+    const dro = document.getElementById("dro");
+    dlo.style.width = "0";
+    dro.style.width = "0";
+    lo.style.overflow = "hidden";
+    ro.style.overflow = "hidden";
+    lo.style.width = "0";
+    ro.style.width = "0";
     ClkHmeB();
     clearInterval(activatetime);
     clearInterval(activatetimeH);
@@ -131,8 +147,16 @@ function opengateH(){
     clearInterval(activatetimeM);
 }
 function opengateD(){
-    document.getElementById("lo").style.width = "0";
-    document.getElementById("ro").style.width = "0";
+    const lo = document.getElementById("lo");
+    const ro = document.getElementById("ro");
+    const dlo = document.getElementById("dlo");
+    const dro = document.getElementById("dro");
+    dlo.style.width = "0";
+    dro.style.width = "0";
+    lo.style.overflow = "hidden";
+    ro.style.overflow = "hidden";
+    lo.style.width = "0";
+    ro.style.width = "0";
     ClkDwnB();
     clearInterval(activatetime);
     clearInterval(activatetimeH);
@@ -141,8 +165,16 @@ function opengateD(){
     clearInterval(activatetimeM);
 }
 function opengateT(){
-    document.getElementById("lo").style.width = "0";
-    document.getElementById("ro").style.width = "0";
+    const lo = document.getElementById("lo");
+    const ro = document.getElementById("ro");
+    const dlo = document.getElementById("dlo");
+    const dro = document.getElementById("dro");
+    dlo.style.width = "0";
+    dro.style.width = "0";
+    lo.style.overflow = "hidden";
+    ro.style.overflow = "hidden";
+    lo.style.width = "0";
+    ro.style.width = "0";
     ClkTutB();
     clearInterval(activatetime);
     clearInterval(activatetimeH);
@@ -151,14 +183,30 @@ function opengateT(){
     clearInterval(activatetimeM);
 }
 function opengateM(){
-    document.getElementById("lo").style.width = "0";
-    document.getElementById("ro").style.width = "0";
+    const lo = document.getElementById("lo");
+    const ro = document.getElementById("ro");
+    const dlo = document.getElementById("dlo");
+    const dro = document.getElementById("dro");
+    dlo.style.width = "0";
+    dro.style.width = "0";
+    lo.style.overflow = "hidden";
+    ro.style.overflow = "hidden";
+    lo.style.width = "0";
+    ro.style.width = "0";
     ClkMusB();
     clearInterval(activatetime);
 }
 function closegate(){
-    document.getElementById("lo").style.width = "50%";
-    document.getElementById("ro").style.width = "50%";
+    const lo = document.getElementById("lo");
+    const ro = document.getElementById("ro");
+    const dlo = document.getElementById("dlo");
+    const dro = document.getElementById("dro");
+    dlo.style.width = "50%";
+    dro.style.width = "50%";
+    lo.style.overflow = "hidden";
+    ro.style.overflow = "hidden";
+    lo.style.width = "50%";
+    ro.style.width = "50%";
 }
 
 
@@ -186,3 +234,68 @@ function smoothScrollBy(distance, duration) {
 function scrolltobio(){
   smoothScrollBy(1000, 2000); // 100px distance, 2000ms duration
 };
+
+function toggleMatrix(){
+  var lo = document.getElementById("dlo");
+  var ro = document.getElementById("dro");
+  lo.style.background = "transparent";
+  ro.style.background = "transparent";
+}
+const confustication = ["adu48","bgi72","cch59","dof86","eci89","fdt66","ge6y8","hm9m8","ixf3e","jx6f8","kf3e4","lcy9o","ms5c7","n9o63","oa5t6","pgy8i","q6yfs","re4r9","si6fw","tc58y","uns6y","vmnb4","w14dc","xnfy7","yiu5f","zxfw5","0vb64","1a4er","24r6r","336yg","4iu7y","54rfc","63rfg","76f8s","83pol","912es","*c6g4"];
+
+function createRainCanvas(targetId) {
+    const target = document.getElementById(targetId);
+    if (!target) return null;
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    target.appendChild(canvas);
+    canvas.style.display = 'block';
+    canvas.style.background = '#000';
+    canvas.width = target.clientWidth || window.innerWidth;
+    canvas.height = target.clientHeight || window.innerHeight;
+    return { canvas, ctx };
+}
+
+const leftSide = createRainCanvas('lo');
+const rightSide = createRainCanvas('ro');
+const particles = Array.from({ length: 550 }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    text: confustication[Math.floor(Math.random() * confustication.length)],
+    speed: Math.random() * 5 + 2,
+    fontSize: Math.random() * 15 + 6 
+}));
+
+function draw() {
+    [leftSide, rightSide].forEach(item => {
+        if (!item) return;
+        const { canvas, ctx } = item;
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, 'rgba(0, 0, 0, 0.33)'); 
+        gradient.addColorStop(1, 'rgba(0, 255, 0, 0.33)');
+        ctx.fillStyle = gradient;
+        ctx.textAlign = 'center';
+        for (let p of particles) {
+            ctx.font = `bold ${p.fontSize}px monospace`;
+            for (let i = 0; i < p.text.length; i++) {
+                ctx.fillText(p.text[i], p.x, p.y + (i * p.fontSize));
+            }
+        }
+    });
+
+    for (let p of particles) {
+        p.y += p.speed;
+        if (p.y > window.innerHeight) {
+            p.y = -(p.text.length * p.fontSize);
+            p.x = Math.random() * window.innerWidth;
+        }
+        if (Math.random() > 0.98) {
+            p.text = confustication[Math.floor(Math.random() * confustication.length)];
+        }
+    }
+    requestAnimationFrame(draw);
+}
+draw();
