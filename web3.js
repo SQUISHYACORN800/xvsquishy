@@ -4,6 +4,7 @@ var activatetimeH = setInterval(opengateH ,null);
 var activatetimeD = setInterval(opengateD ,null);
 var activatetimeT = setInterval(opengateT ,null);
 var activatetimeM = setInterval(opengateM ,null);
+var offsetHeight = document.getElementById('lo').offsetHeight;
 //  VARIABLES
 
 //const iframes = document.querySelectorAll("iframe");
@@ -253,7 +254,7 @@ function createRainCanvas(targetId) {
     canvas.style.display = 'block';
     canvas.style.background = '#000';
     canvas.width = target.clientWidth || window.innerWidth;
-    canvas.height = target.clientHeight || window.innerHeight;
+    canvas.height = offsetHeight;
     return { canvas, ctx };
 }
 
@@ -261,7 +262,7 @@ const leftSide = createRainCanvas('lo');
 const rightSide = createRainCanvas('ro');
 const particles = Array.from({ length: 550 }, () => ({
     x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
+    y: Math.random() * offsetHeight,
     text: confustication[Math.floor(Math.random() * confustication.length)],
     speed: Math.random() * 5 + 2,
     fontSize: Math.random() * 15 + 6 
@@ -288,7 +289,7 @@ function draw() {
 
     for (let p of particles) {
         p.y += p.speed;
-        if (p.y > window.innerHeight) {
+        if (p.y > offsetHeight) {
             p.y = -(p.text.length * p.fontSize);
             p.x = Math.random() * window.innerWidth;
         }
