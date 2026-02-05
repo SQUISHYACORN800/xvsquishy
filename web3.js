@@ -240,12 +240,20 @@ function scrolltobio(){
 };
 
 function toggleMatrix(){
-  var lo = document.getElementById("dlo");
-  var ro = document.getElementById("dro");
-  document.getElementById("leftCanvas").style.display = "block";
-  document.getElementById("rightCanvas").style.display = "block";
-  lo.style.background = "transparent";
-  ro.style.background = "transparent";
+  const lo = document.getElementById("dlo");
+  const ro = document.getElementById("dro");
+  const item = document.getElementById("leftCanvas");
+  const item = document.getElementById("rightCanvas");
+    // Check current display state
+    if (item.style.display === "none" || item.style.display === "") {
+        item.style.display = "block";
+        lo.style.background = "transparent";
+        ro.style.background = "transparent";
+    } else {
+        item.style.display = "none";
+        lo.style.background = "var(--black)";
+        ro.style.background = "var(--black)";
+    }
 }
 const a = ["adu48","bgi72","cch59","dof86","eci89","fdt66","ge6y8","hm9m8","ixf3e","jx6f8","kf3e4","lcy9o","ms5c7","n9o63","oa5t6","pgy8i","q6yfs","re4r9","si6fw","tc58y","uns6y","vmnb4","w14dc","xnfy7","yiu5f","zxfw5","0vb64","1a4er","24r6r","336yg","4iu7y","54rfc","63rfg","76f8s","83pol","912es","*c6g4"];
 
