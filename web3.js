@@ -4,7 +4,6 @@ var activatetimeH = setInterval(opengateH ,null);
 var activatetimeD = setInterval(opengateD ,null);
 var activatetimeT = setInterval(opengateT ,null);
 var activatetimeM = setInterval(opengateM ,null);
-var offsetHeight = document.getElementById('lo').offsetHeight;
 //  VARIABLES
 
 //const iframes = document.querySelectorAll("iframe");
