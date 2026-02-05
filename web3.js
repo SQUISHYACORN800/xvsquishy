@@ -20,7 +20,7 @@ function createRainCanvas(targetId) {
     function resize() {
         // Fix: Set internal resolution to match the parent's actual pixels
         canvas.width = target.offsetWidth;
-        canvas.height = "100vh";
+        canvas.height = target.offsetHeight;
     }
 
     window.addEventListener('resize', resize);
@@ -31,7 +31,6 @@ function createRainCanvas(targetId) {
     canvas.style.position = "absolute"; 
     canvas.style.top = "0";
     canvas.style.left = "0";
-    canvas.style.height = "100vh";
 
     return { canvas, ctx, target };
 }
