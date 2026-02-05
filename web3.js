@@ -243,26 +243,35 @@ function toggleMatrix(){
 }
 const a = ["adu48","bgi72","cch59","dof86","eci89","fdt66","ge6y8","hm9m8","ixf3e","jx6f8","kf3e4","lcy9o","ms5c7","n9o63","oa5t6","pgy8i","q6yfs","re4r9","si6fw","tc58y","uns6y","vmnb4","w14dc","xnfy7","yiu5f","zxfw5","0vb64","1a4er","24r6r","336yg","4iu7y","54rfc","63rfg","76f8s","83pol","912es","*c6g4"];
 
-// Target the existing canvases in your HTML
-const leftCanvas = document.querySelector('#lo canvas');
-const rightCanvas = document.querySelector('#ro canvas');
-const lCtx = leftCanvas.getContext('2d');
-const rCtx = rightCanvas.getContext('2d');
+function createRainCanvas(parentId, canvasId) {
+    const parent = document.getElementById(parentId);
+    if (!parent) return null;
 
-function fixResolution() {
-    // Set internal resolution to match the actual viewport height/width
-    // This removes the "150px" default warping
-    [leftCanvas, rightCanvas].forEach(canvas => {
-        canvas.width = window.innerWidth / 2; // Match 50% width
-        canvas.height = window.innerHeight;    // Match 100vh
-    });
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute("id", canvasId);
+    parent.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+        // Match internal pixels to screen pixels exactly to stop blurring
+        // We use window.innerWidth/2 because your panels are 50% width
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    return { canvas, ctx };
 }
 
-window.addEventListener('resize', fixResolution);
-fixResolution();
+// Setup both sides
+const leftSide = createRainCanvas('lo', 'leftCanvas');
+const rightSide = createRainCanvas('ro', 'rightCanvas');
 
-// Use relative coordinates (0 to 1) so text doesn't teleport on resize
-const particles = Array.from({ length: 150 }, () => ({
+// Particle settings
+const particles = Array.from({ length: 350 }, () => ({
     x: Math.random(),
     y: Math.random(),
     text: a[Math.floor(Math.random() * a.length)],
@@ -271,34 +280,42 @@ const particles = Array.from({ length: 150 }, () => ({
 }));
 
 function draw() {
-    [lCtx, rCtx].forEach(ctx => {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
-        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    [leftSide, rightSide].forEach(side => {
+        if (!side) return;
+        const { canvas, ctx } = side;
 
-        const grad = ctx.createLinearGradient(0, 0, 0, ctx.canvas.height);
-        grad.addColorStop(0, 'rgba(0, 0, 0, 0.4)');
-        grad.addColorStop(1, 'rgba(0, 255, 0, 0.4)');
+        // Clear with trail
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Apply Gradient
+        const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        grad.addColorStop(0, 'rgba(0, 0, 0, 0.33)');
+        grad.addColorStop(1, 'rgba(0, 255, 0, 0.33)');
         ctx.fillStyle = grad;
         ctx.textAlign = 'center';
 
         particles.forEach(p => {
             ctx.font = `bold ${p.fontSize}px monospace`;
-            const xPos = p.x * ctx.canvas.width;
-            const yPos = p.y * ctx.canvas.height;
+            const xPos = p.x * canvas.width;
+            const yPos = p.y * canvas.height;
             
-            // Vertical Upright Stacking
+            // Vertical Stack (Upright)
             for (let i = 0; i < p.text.length; i++) {
                 ctx.fillText(p.text[i], xPos, yPos + (i * p.fontSize));
             }
         });
     });
 
+    // Update positions
     particles.forEach(p => {
         p.y += p.speed;
         if (p.y > 1.1) p.y = -0.1;
-        if (Math.random() > 0.99) p.text = a[Math.floor(Math.random() * a.length)];
+        if (Math.random() > 0.98) p.text = a[Math.floor(Math.random() * a.length)];
     });
 
     requestAnimationFrame(draw);
 }
+
+
 draw();
