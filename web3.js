@@ -242,6 +242,8 @@ function scrolltobio(){
 function toggleMatrix(){
   var lo = document.getElementById("dlo");
   var ro = document.getElementById("dro");
+  document.getElementById("leftCanvas").style.display = "block";
+  document.getElementById("rightCanvas").style.display = "block";
   lo.style.background = "transparent";
   ro.style.background = "transparent";
 }
@@ -317,7 +319,8 @@ function draw() {
         if (p.y > 1.1) p.y = -0.1;
         if (Math.random() > 0.98) p.text = a[Math.floor(Math.random() * a.length)];
     });
-
+    document.getElementById("leftCanvas").style.display = "none";
+    document.getElementById("rightCanvas").style.display = "none";
     requestAnimationFrame(draw);
 }
 
