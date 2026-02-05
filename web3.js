@@ -273,7 +273,7 @@ const leftSide = createRainCanvas('lo');
 const rightSide = createRainCanvas('ro');
 
 // We use 550 particles relative to the size of the screen
-const particles = Array.from({ length: 550 }, () => ({
+const particles = Array.from({ length: 250 }, () => ({
     x: Math.random(), // Store as 0 to 1 ratio to prevent warping on resize
     y: Math.random(), 
     text: a[Math.floor(Math.random() * a.length)],
