@@ -242,15 +242,24 @@ function scrolltobio(){
 function toggleMatrix(){
   const lo = document.getElementById("dlo");
   const ro = document.getElementById("dro");
-  const item = document.getElementById("leftCanvas");
-  const item = document.getElementById("rightCanvas");
+  const leftCanvas = document.getElementById("leftCanvas");
+  const rightCanvas = document.getElementById("rightCanvas");
     // Check current display state
-    if (item.style.display === "none" || item.style.display === "") {
-        item.style.display = "block";
+    if (leftCanvas.style.display === "none" || leftCanvas.style.display === "") {
+        leftCanvas.style.display = "block";
         lo.style.background = "transparent";
         ro.style.background = "transparent";
     } else {
-        item.style.display = "none";
+        leftCanvas.style.display = "none";
+        lo.style.background = "var(--black)";
+        ro.style.background = "var(--black)";
+    }
+    if (rightCanvas.style.display === "none" || rightCanvas.style.display === "") {
+        rightCanvas.style.display = "block";
+        lo.style.background = "transparent";
+        ro.style.background = "transparent";
+    } else {
+        rightCanvas.style.display = "none";
         lo.style.background = "var(--black)";
         ro.style.background = "var(--black)";
     }
