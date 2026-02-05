@@ -95,6 +95,8 @@ function btn_clk_1(){
     if (document.documentElement.style.filter == "invert(1)"){
         document.documentElement.style.filter = "invert(0)";
         document.getElementById("keep").style.filter = "invert(0)";
+        document.getElementById("lo").style.filter = "invert(0)";
+        document.getElementById("ro").style.filter = "invert(0)";
         const iframes = document.querySelectorAll("iframe");
         iframes.forEach(iframe => {
             iframe.style.filter = "invert(0)";
@@ -102,6 +104,8 @@ function btn_clk_1(){
     }else{
         document.documentElement.style.filter = "invert(1)";
         document.getElementById("keep").style.filter = "invert(1)";
+        document.getElementById("lo").style.filter = "invert(1)";
+        document.getElementById("ro").style.filter = "invert(1)";
         const iframes = document.querySelectorAll("iframe");
         iframes.forEach(iframe => {
             iframe.style.filter = "invert(1)";
@@ -316,6 +320,5 @@ function draw() {
 
     requestAnimationFrame(draw);
 }
-
 
 draw();
