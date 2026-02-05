@@ -1,6 +1,5 @@
 html{
     background: black;
-    height:100%;
 }
 
 :root{
@@ -22,7 +21,6 @@ header{
 }
 body{
     background: var(--black);
-    height:100%;
     margin: 0;
     overflow-x: hidden;
 }
@@ -53,10 +51,6 @@ footer{
   right:-6px;
   border-left: double 6px whitesmoke;
   z-index: 9999999;
-}
-#lo, #ro {
-    height: 100vh; /* or 100% */
-    width: 200px;  /* or whatever your width is */
 }
 ::-webkit-scrollbar{
     width: 20px;
