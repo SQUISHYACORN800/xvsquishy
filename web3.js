@@ -253,18 +253,9 @@ function createRainCanvas(targetId) {
     target.appendChild(canvas);
 
     function resize() {
-        // getBoundingClientRect is more accurate than offsetHeight for scaled elements
-        const rect = target.getBoundingClientRect();
-    
-        // Only update if the height is actually greater than 0
-        if (rect.height > 0) {
-            canvas.width = rect.width;
-            canvas.height = rect.height;
-        } else {
-            // Fallback to window height if the container is currently hidden/collapsed
-            canvas.width = target.clientWidth || window.innerWidth;
-            canvas.height = target.clientHeight || window.innerHeight;
-        }
+        // Fix: Set internal resolution to match the parent's actual pixels
+        canvas.width = target.offsetWidth;
+        canvas.height = target.offsetHeight;
     }
 
     window.addEventListener('resize', resize);
