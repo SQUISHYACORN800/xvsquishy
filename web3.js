@@ -242,7 +242,7 @@ function toggleMatrix(){
   lo.style.background = "transparent";
   ro.style.background = "transparent";
 }
-const confustication = ["adu48","bgi72","cch59","dof86","eci89","fdt66","ge6y8","hm9m8","ixf3e","jx6f8","kf3e4","lcy9o","ms5c7","n9o63","oa5t6","pgy8i","q6yfs","re4r9","si6fw","tc58y","uns6y","vmnb4","w14dc","xnfy7","yiu5f","zxfw5","0vb64","1a4er","24r6r","336yg","4iu7y","54rfc","63rfg","76f8s","83pol","912es","*c6g4"];
+const a = ["adu48","bgi72","cch59","dof86","eci89","fdt66","ge6y8","hm9m8","ixf3e","jx6f8","kf3e4","lcy9o","ms5c7","n9o63","oa5t6","pgy8i","q6yfs","re4r9","si6fw","tc58y","uns6y","vmnb4","w14dc","xnfy7","yiu5f","zxfw5","0vb64","1a4er","24r6r","336yg","4iu7y","54rfc","63rfg","76f8s","83pol","912es","*c6g4"];
 
 function createRainCanvas(targetId) {
     const target = document.getElementById(targetId);
@@ -252,66 +252,75 @@ function createRainCanvas(targetId) {
     const ctx = canvas.getContext('2d');
     target.appendChild(canvas);
 
-    // 1. Function to sync canvas size to parent size
     function resize() {
-        canvas.width = target.clientWidth;
-        canvas.height = target.clientHeight;
+        // Fix: Set internal resolution to match the parent's actual pixels
+        canvas.width = target.offsetWidth;
+        canvas.height = target.offsetHeight;
     }
 
-    // 2. Initial sizing
+    window.addEventListener('resize', resize);
     resize();
 
-    // 3. Update size if the window changes
-    window.addEventListener('resize', resize);
+    // Style the canvas so it doesn't try to "auto-stretch"
+    canvas.style.display = "block";
+    canvas.style.position = "absolute"; 
+    canvas.style.top = "0";
+    canvas.style.left = "0";
 
-    // CSS to ensure the canvas fills the space
-    canvas.style.display = 'block';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.background = '#000';
-
-    return { canvas, ctx };
+    return { canvas, ctx, target };
 }
 
 const leftSide = createRainCanvas('lo');
 const rightSide = createRainCanvas('ro');
+
+// We use 550 particles relative to the size of the screen
 const particles = Array.from({ length: 550 }, () => ({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    text: confustication[Math.floor(Math.random() * confustication.length)],
-    speed: Math.random() * 5 + 2,
-    fontSize: Math.random() * 15 + 6 
+    x: Math.random(), // Store as 0 to 1 ratio to prevent warping on resize
+    y: Math.random(), 
+    text: a[Math.floor(Math.random() * a.length)],
+    speed: Math.random() * 0.005 + 0.002, // Relative speed
+    fontSize: Math.random() * 15 + 10 
 }));
 
 function draw() {
     [leftSide, rightSide].forEach(item => {
         if (!item) return;
         const { canvas, ctx } = item;
+        
         ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
         const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
         gradient.addColorStop(0, 'rgba(0, 0, 0, 0.33)'); 
         gradient.addColorStop(1, 'rgba(0, 255, 0, 0.33)');
         ctx.fillStyle = gradient;
         ctx.textAlign = 'center';
+
         for (let p of particles) {
             ctx.font = `bold ${p.fontSize}px monospace`;
+            // Calculate actual pixel position based on canvas size
+            const realX = p.x * canvas.width;
+            const realY = p.y * canvas.height;
+
             for (let i = 0; i < p.text.length; i++) {
-                ctx.fillText(p.text[i], p.x, p.y + (i * p.fontSize));
+                ctx.fillText(p.text[i], realX, realY + (i * p.fontSize));
             }
         }
     });
 
+    // Update positions using ratios
     for (let p of particles) {
         p.y += p.speed;
-        if (p.y > window.innerHeight) {
-            p.y = -(p.text.length * p.fontSize);
-            p.x = Math.random() * window.innerWidth;
+        if (p.y > 1) {
+            p.y = -0.1;
+            p.x = Math.random();
         }
         if (Math.random() > 0.98) {
-            p.text = confustication[Math.floor(Math.random() * confustication.length)];
+            p.text = a[Math.floor(Math.random() * a.length)];
         }
     }
+
     requestAnimationFrame(draw);
 }
+
 draw();
