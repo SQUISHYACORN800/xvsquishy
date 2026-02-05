@@ -42,6 +42,12 @@ footer{
   border-right: double 6px whitesmoke;
   z-index: 9999999;
 }
+#lo{
+    height:100% !important;
+}
+#ro{
+    height:100% !important;
+}
 .rightone{
   background:var(--black);
   height:100%;
