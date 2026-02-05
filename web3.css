@@ -39,15 +39,24 @@ footer{
   height:100%;
   position:fixed;
   width:50%;
-  transition:all 2s;
+  transition:width 1.2s !important;
+  left:-6px;
+  border-right: double 6px whitesmoke;
+  z-index: 9999999;
 }
 .rightone{
   background:var(--black);
   height:100%;
   position:fixed;
   width:50%;
-  transition:all 2s;
-  right:0;
+  transition:width 1.2s !important;
+  right:-6px;
+  border-left: double 6px whitesmoke;
+  z-index: 9999999;
+}
+#lo, #ro {
+    height: 100vh; /* or 100% */
+    width: 200px;  /* or whatever your width is */
 }
 ::-webkit-scrollbar{
     width: 20px;
