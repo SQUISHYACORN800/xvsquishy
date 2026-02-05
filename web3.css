@@ -39,6 +39,7 @@ footer{
   width:50%;
   transition:width 1.2s !important;
   left:-6px;
+  overflow: hidden;
   border-right: double 6px whitesmoke;
   z-index: 9999999;
 }
@@ -49,8 +50,16 @@ footer{
   width:50%;
   transition:width 1.2s !important;
   right:-6px;
+  overflow: hidden;
   border-left: double 6px whitesmoke;
   z-index: 9999999;
+}
+canvas {
+  /* IMPORTANT: Stop CSS from defining height; let JS do it */
+  height: 100vh !important;
+  width: 50vw !important; 
+  object-fit: cover;
+  image-rendering: pixelated; /* Keeps text crisp */
 }
 ::-webkit-scrollbar{
     width: 20px;

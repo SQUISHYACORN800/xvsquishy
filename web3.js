@@ -243,83 +243,62 @@ function toggleMatrix(){
 }
 const a = ["adu48","bgi72","cch59","dof86","eci89","fdt66","ge6y8","hm9m8","ixf3e","jx6f8","kf3e4","lcy9o","ms5c7","n9o63","oa5t6","pgy8i","q6yfs","re4r9","si6fw","tc58y","uns6y","vmnb4","w14dc","xnfy7","yiu5f","zxfw5","0vb64","1a4er","24r6r","336yg","4iu7y","54rfc","63rfg","76f8s","83pol","912es","*c6g4"];
 
-function createRainCanvas(targetId) {
-    const target = document.getElementById(targetId);
-    if (!target) return null;
+// Target the existing canvases in your HTML
+const leftCanvas = document.querySelector('#lo canvas');
+const rightCanvas = document.querySelector('#ro canvas');
+const lCtx = leftCanvas.getContext('2d');
+const rCtx = rightCanvas.getContext('2d');
 
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    target.appendChild(canvas);
-
-    function resize() {
-        // Fix: Set internal resolution to match the parent's actual pixels
-        canvas.width = target.offsetWidth;
-        canvas.height = target.offsetHeight;
-    }
-
-    window.addEventListener('resize', resize);
-    resize();
-
-    // Style the canvas so it doesn't try to "auto-stretch"
-    canvas.style.display = "block";
-    canvas.style.position = "absolute"; 
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-
-    return { canvas, ctx, target };
+function fixResolution() {
+    // Set internal resolution to match the actual viewport height/width
+    // This removes the "150px" default warping
+    [leftCanvas, rightCanvas].forEach(canvas => {
+        canvas.width = window.innerWidth / 2; // Match 50% width
+        canvas.height = window.innerHeight;    // Match 100vh
+    });
 }
 
-const leftSide = createRainCanvas('lo');
-const rightSide = createRainCanvas('ro');
+window.addEventListener('resize', fixResolution);
+fixResolution();
 
-// We use 550 particles relative to the size of the screen
-const particles = Array.from({ length: 250 }, () => ({
-    x: Math.random(), // Store as 0 to 1 ratio to prevent warping on resize
-    y: Math.random(), 
+// Use relative coordinates (0 to 1) so text doesn't teleport on resize
+const particles = Array.from({ length: 150 }, () => ({
+    x: Math.random(),
+    y: Math.random(),
     text: a[Math.floor(Math.random() * a.length)],
-    speed: Math.random() * 0.005 + 0.002, // Relative speed
-    fontSize: Math.random() * 15 + 10 
+    speed: Math.random() * 0.003 + 0.001,
+    fontSize: Math.random() * 15 + 12
 }));
 
 function draw() {
-    [leftSide, rightSide].forEach(item => {
-        if (!item) return;
-        const { canvas, ctx } = item;
-        
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-        gradient.addColorStop(0, 'rgba(0, 0, 0, 0.33)'); 
-        gradient.addColorStop(1, 'rgba(0, 255, 0, 0.33)');
-        ctx.fillStyle = gradient;
+    [lCtx, rCtx].forEach(ctx => {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        const grad = ctx.createLinearGradient(0, 0, 0, ctx.canvas.height);
+        grad.addColorStop(0, 'rgba(0, 0, 0, 0.4)');
+        grad.addColorStop(1, 'rgba(0, 255, 0, 0.4)');
+        ctx.fillStyle = grad;
         ctx.textAlign = 'center';
 
-        for (let p of particles) {
+        particles.forEach(p => {
             ctx.font = `bold ${p.fontSize}px monospace`;
-            // Calculate actual pixel position based on canvas size
-            const realX = p.x * canvas.width;
-            const realY = p.y * canvas.height;
-
+            const xPos = p.x * ctx.canvas.width;
+            const yPos = p.y * ctx.canvas.height;
+            
+            // Vertical Upright Stacking
             for (let i = 0; i < p.text.length; i++) {
-                ctx.fillText(p.text[i], realX, realY + (i * p.fontSize));
+                ctx.fillText(p.text[i], xPos, yPos + (i * p.fontSize));
             }
-        }
+        });
     });
 
-    // Update positions using ratios
-    for (let p of particles) {
+    particles.forEach(p => {
         p.y += p.speed;
-        if (p.y > 1) {
-            p.y = -0.1;
-            p.x = Math.random();
-        }
-        if (Math.random() > 0.98) {
-            p.text = a[Math.floor(Math.random() * a.length)];
-        }
-    }
+        if (p.y > 1.1) p.y = -0.1;
+        if (Math.random() > 0.99) p.text = a[Math.floor(Math.random() * a.length)];
+    });
 
     requestAnimationFrame(draw);
 }
-
 draw();
