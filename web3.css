@@ -1,5 +1,6 @@
 html{
     background: black;
+    height:100%;
 }
 
 :root{
@@ -21,6 +22,7 @@ header{
 }
 body{
     background: var(--black);
+    height:100%;
     margin: 0;
     overflow-x: hidden;
 }
@@ -34,7 +36,7 @@ footer{
 }
 .leftone{
   background:var(--black);
-  height:100%;
+  height:100vh;
   position:fixed;
   width:50%;
   transition:width 1.2s !important;
@@ -43,14 +45,14 @@ footer{
   z-index: 9999999;
 }
 #lo{
-    height:100% !important;
+    height:100vh !important;
 }
 #ro{
-    height:100% !important;
+    height:100vh !important;
 }
 .rightone{
   background:var(--black);
-  height:100%;
+  height:100vh;
   position:fixed;
   width:50%;
   transition:width 1.2s !important;
