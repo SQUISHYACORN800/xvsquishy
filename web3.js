@@ -251,10 +251,25 @@ function createRainCanvas(targetId) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     target.appendChild(canvas);
+
+    // 1. Function to sync canvas size to parent size
+    function resize() {
+        canvas.width = target.clientWidth;
+        canvas.height = target.clientHeight;
+    }
+
+    // 2. Initial sizing
+    resize();
+
+    // 3. Update size if the window changes
+    window.addEventListener('resize', resize);
+
+    // CSS to ensure the canvas fills the space
     canvas.style.display = 'block';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
     canvas.style.background = '#000';
-    canvas.width = target.clientWidth || window.innerWidth;
-    canvas.height = offsetHeight;
+
     return { canvas, ctx };
 }
 
@@ -262,7 +277,7 @@ const leftSide = createRainCanvas('lo');
 const rightSide = createRainCanvas('ro');
 const particles = Array.from({ length: 550 }, () => ({
     x: Math.random() * window.innerWidth,
-    y: Math.random() * offsetHeight,
+    y: Math.random() * window.innerHeight,
     text: confustication[Math.floor(Math.random() * confustication.length)],
     speed: Math.random() * 5 + 2,
     fontSize: Math.random() * 15 + 6 
@@ -289,7 +304,7 @@ function draw() {
 
     for (let p of particles) {
         p.y += p.speed;
-        if (p.y > offsetHeight) {
+        if (p.y > window.innerHeight) {
             p.y = -(p.text.length * p.fontSize);
             p.x = Math.random() * window.innerWidth;
         }
