@@ -336,8 +336,8 @@ function draw() {
         if (p.y > 1.1) p.y = -0.1;
         if (Math.random() > 0.98) p.text = a[Math.floor(Math.random() * a.length)];
     });
-    document.getElementById("leftCanvas").style.display = "none";
-    document.getElementById("rightCanvas").style.display = "none";
+    //document.getElementById("leftCanvas").style.display = "none";
+    //document.getElementById("rightCanvas").style.display = "none";
     requestAnimationFrame(draw);
 }
 
