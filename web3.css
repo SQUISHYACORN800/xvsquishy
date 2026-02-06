@@ -37,7 +37,7 @@ footer{
   height:100%;
   position:fixed;
   width:50%;
-  transition:width 2s !important;
+  transition:width 1.2s !important; 
   left:-6px;
   overflow: hidden;
   border-right: double 6px whitesmoke;
@@ -48,7 +48,7 @@ footer{
   height:100%;
   position:fixed;
   width:50%;
-  transition:width 2s !important;
+  transition:width 1.2s !important;
   right:-6px;
   overflow: hidden;
   border-left: double 6px whitesmoke;
