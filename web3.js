@@ -298,7 +298,7 @@ const particles = Array.from({ length: 250 }, () => ({
     x: Math.random(),
     y: Math.random(),
     text: a[Math.floor(Math.random() * a.length)],
-    speed: Math.random() * 0.03 + 0.01,
+    speed: Math.random() * 0.007 + 0.001,
     fontSize: Math.random() * 15 + 12
 }));
 
