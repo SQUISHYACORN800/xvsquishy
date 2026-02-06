@@ -294,11 +294,11 @@ const leftSide = createRainCanvas('lo', 'leftCanvas');
 const rightSide = createRainCanvas('ro', 'rightCanvas');
 
 // Particle settings
-const particles = Array.from({ length: 350 }, () => ({
+const particles = Array.from({ length: 250 }, () => ({
     x: Math.random(),
     y: Math.random(),
     text: a[Math.floor(Math.random() * a.length)],
-    speed: Math.random() * 0.003 + 0.001,
+    speed: Math.random() * 0.03 + 0.01,
     fontSize: Math.random() * 15 + 12
 }));
 
