@@ -342,3 +342,18 @@ function draw() {
 }
 
 draw();
+
+
+var switchvar = 1;
+function exit() {
+  var Sig = document.getElementById("Sigma");
+  var Del = document.getElementById("Delta");
+  Sig.classList.toggle("slide-down");
+    if (switchvar==0){
+      Del.classList.toggle("blur-in");
+      Del.classList.toggle("blur-out");
+    }else if (switchvar==1){
+      Del.classList.toggle("blur-in");
+      switchvar = 0;
+    }
+}

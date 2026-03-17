@@ -5,6 +5,8 @@ html{
 :root{
     --purple: rgb(84, 0, 186);
     --black: rgb(23, 22, 22);
+    --cyan: darkcyan;
+    --gray: gray;
 }
 
 header{
@@ -447,4 +449,118 @@ a[footer]{
     width: 200px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.UNI{
+  font-size:20px;
+  position: fixed;
+  font-family:courier;
+  left: 20px;
+  z-index: 1; 
+  width: 50px; 
+  background: #ffffff11;
+  border-radius: 100px;
+  backdrop-filter: blur(5px);
+  border: var(--gray) solid 1px;
+  &:hover{
+    border:var(--cyan) solid 1px;
+    color:var(--cyan);
+  }
+}
+.Sig {
+  bottom: 20px;    
+  cursor:pointer;
+  pointer-events: auto;
+  color: var(--gray);
+  height: 50px;
+  text-align: center;
+  align-content: center;
+}
+.Side {
+  opacity:0;
+  pointer-events: none;
+  top: 30%;
+  height: 314px;
+  padding-left:2px;
+  padding-right:2px;
+}
+.DSub{
+  cursor:pointer;
+  font-size:20px;
+  font-family:courier;
+  margin-top:2px;
+  color: var(--gray);
+  z-index: 1;
+  border: var(--gray) solid 1px;
+  width: 48px; 
+  height: 48px;
+  text-align: center;
+  align-content: center;
+  border-radius: 100%;
+  background: #ffffff11;
+  backdrop-filter: blur(5px);
+  &:hover{
+    border:var(--cyan) solid 1px;
+    color:var(--cyan);
+  }
+}
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px);
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+@keyframes slideDown {
+  from { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to { 
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+.slide-down {
+  animation: slideDown 0.6s ease-out forwards;
+  cursor: default;
+  pointer-events: none;
+}
+
+@keyframes blurIn {
+  from { 
+    filter: blur(10px);
+    opacity: 0;
+  }
+  to { 
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.blur-in {
+  animation: blurIn 0.8s ease-out forwards;
+  pointer-events: auto;
+}
+@keyframes blurOut {
+  from { 
+    filter: blur(0);
+    opacity: 1;
+  }
+  to { 
+    filter: blur(10px);
+    opacity: 0;
+  }
+}
+.blur-out {
+  animation: blurOut 0.8s ease-out forwards;
+  pointer-events: none;
 }
